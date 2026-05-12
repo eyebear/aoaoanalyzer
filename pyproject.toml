@@ -1,7 +1,7 @@
 [project]
-name = "aoaoanalyzer"
+name = "aonalyzer"
 version = "0.1.0"
-description = "Ao Ao Analyzer is a local, Dockerized, AI-assisted equity and options research operating system."
+description = "Aonalyzer is a local, Dockerized, AI-assisted equity and options research operating system."
 requires-python = ">=3.11"
 readme = "README.md"
 

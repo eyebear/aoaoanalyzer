@@ -1,8 +1,8 @@
-# Ao Ao Analyzer 20-Layer Architecture
+# Aonalyzer 20-Layer Architecture
 
 ## Overview
 
-Ao Ao Analyzer uses a 20-layer architecture.
+Aonalyzer uses a 20-layer architecture.
 
 The system is designed as a local, Dockerized research operating system for equity and options research.
 

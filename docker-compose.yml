@@ -1,63 +1,63 @@
-name: aoaoanalyzer
+name: aonalyzer
 
 services:
-  aoaoanalyzer-postgres:
+  aonalyzer-postgres:
     image: pgvector/pgvector:pg16
-    container_name: aoaoanalyzer-postgres
+    container_name: aonalyzer-postgres
     environment:
-      POSTGRES_DB: aoaoanalyzer
-      POSTGRES_USER: aoaoanalyzer
-      POSTGRES_PASSWORD: aoaoanalyzer_password
+      POSTGRES_DB: aonalyzer
+      POSTGRES_USER: aonalyzer
+      POSTGRES_PASSWORD: aonalyzer_password
     ports:
       - "5434:5432"
     volumes:
-      - aoaoanalyzer_postgres_data:/var/lib/postgresql/data
+      - aonalyzer_postgres_data:/var/lib/postgresql/data
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aoaoanalyzer -d aoaoanalyzer"]
+      test: ["CMD-SHELL", "pg_isready -U aonalyzer -d aonalyzer"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  aoaoanalyzer-redis:
+  aonalyzer-redis:
     image: redis:7.4-alpine
-    container_name: aoaoanalyzer-redis
+    container_name: aonalyzer-redis
     ports:
       - "6379:6379"
     volumes:
-      - aoaoanalyzer_redis_data:/data
+      - aonalyzer_redis_data:/data
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  aoaoanalyzer-api:
+  aonalyzer-api:
     build:
       context: .
       dockerfile: Dockerfile.api
-    container_name: aoaoanalyzer-api
+    container_name: aonalyzer-api
     env_file:
       - .env
     environment:
-      APP_NAME: "Ao Ao Analyzer"
-      APP_TECHNICAL_NAME: "aoaoanalyzer"
+      APP_NAME: "Aonalyzer"
+      APP_TECHNICAL_NAME: "aonalyzer"
       APP_ENV: "docker"
       APP_DEBUG: "true"
       API_HOST: "0.0.0.0"
       API_PORT: "8000"
-      POSTGRES_HOST: "aoaoanalyzer-postgres"
+      POSTGRES_HOST: "aonalyzer-postgres"
       POSTGRES_PORT: "5432"
-      POSTGRES_DB: "aoaoanalyzer"
-      POSTGRES_USER: "aoaoanalyzer"
-      POSTGRES_PASSWORD: "aoaoanalyzer_password"
-      DATABASE_URL: "postgresql+psycopg://aoaoanalyzer:aoaoanalyzer_password@aoaoanalyzer-postgres:5432/aoaoanalyzer"
-      REDIS_HOST: "aoaoanalyzer-redis"
+      POSTGRES_DB: "aonalyzer"
+      POSTGRES_USER: "aonalyzer"
+      POSTGRES_PASSWORD: "aonalyzer_password"
+      DATABASE_URL: "postgresql+psycopg://aonalyzer:aonalyzer_password@aonalyzer-postgres:5432/aonalyzer"
+      REDIS_HOST: "aonalyzer-redis"
       REDIS_PORT: "6379"
-      REDIS_URL: "redis://aoaoanalyzer-redis:6379/0"
+      REDIS_URL: "redis://aonalyzer-redis:6379/0"
       ACTIVE_AI_PROVIDER: "DISABLED"
       FALLBACK_AI_PROVIDER: "DISABLED"
       DEFAULT_STRATEGY_PROFILE: "Balanced Research Default"
@@ -65,101 +65,101 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
-      - aoaoanalyzer_exports:/app/exports
-      - aoaoanalyzer_models:/app/models
-      - aoaoanalyzer_reports:/app/reports
+      - aonalyzer_exports:/app/exports
+      - aonalyzer_models:/app/models
+      - aonalyzer_reports:/app/reports
     depends_on:
-      aoaoanalyzer-postgres:
+      aonalyzer-postgres:
         condition: service_healthy
-      aoaoanalyzer-redis:
+      aonalyzer-redis:
         condition: service_healthy
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
 
-  aoaoanalyzer-agent:
+  aonalyzer-agent:
     build:
       context: .
       dockerfile: Dockerfile.agent
-    container_name: aoaoanalyzer-agent
+    container_name: aonalyzer-agent
     env_file:
       - .env
     environment:
-      APP_NAME: "Ao Ao Analyzer"
-      APP_TECHNICAL_NAME: "aoaoanalyzer"
+      APP_NAME: "Aonalyzer"
+      APP_TECHNICAL_NAME: "aonalyzer"
       APP_ENV: "docker"
       APP_DEBUG: "true"
-      POSTGRES_HOST: "aoaoanalyzer-postgres"
+      POSTGRES_HOST: "aonalyzer-postgres"
       POSTGRES_PORT: "5432"
-      POSTGRES_DB: "aoaoanalyzer"
-      POSTGRES_USER: "aoaoanalyzer"
-      POSTGRES_PASSWORD: "aoaoanalyzer_password"
-      DATABASE_URL: "postgresql+psycopg://aoaoanalyzer:aoaoanalyzer_password@aoaoanalyzer-postgres:5432/aoaoanalyzer"
-      REDIS_HOST: "aoaoanalyzer-redis"
+      POSTGRES_DB: "aonalyzer"
+      POSTGRES_USER: "aonalyzer"
+      POSTGRES_PASSWORD: "aonalyzer_password"
+      DATABASE_URL: "postgresql+psycopg://aonalyzer:aonalyzer_password@aonalyzer-postgres:5432/aonalyzer"
+      REDIS_HOST: "aonalyzer-redis"
       REDIS_PORT: "6379"
-      REDIS_URL: "redis://aoaoanalyzer-redis:6379/0"
+      REDIS_URL: "redis://aonalyzer-redis:6379/0"
       ACTIVE_AI_PROVIDER: "DISABLED"
       FALLBACK_AI_PROVIDER: "DISABLED"
       DEFAULT_STRATEGY_PROFILE: "Balanced Research Default"
     volumes:
       - .:/app
-      - aoaoanalyzer_exports:/app/exports
-      - aoaoanalyzer_models:/app/models
-      - aoaoanalyzer_reports:/app/reports
+      - aonalyzer_exports:/app/exports
+      - aonalyzer_models:/app/models
+      - aonalyzer_reports:/app/reports
     depends_on:
-      aoaoanalyzer-postgres:
+      aonalyzer-postgres:
         condition: service_healthy
-      aoaoanalyzer-redis:
+      aonalyzer-redis:
         condition: service_healthy
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
 
-  aoaoanalyzer-dashboard:
+  aonalyzer-dashboard:
     build:
       context: .
       dockerfile: Dockerfile.dashboard
-    container_name: aoaoanalyzer-dashboard
+    container_name: aonalyzer-dashboard
     environment:
-      APP_NAME: "Ao Ao Analyzer"
-      APP_TECHNICAL_NAME: "aoaoanalyzer"
+      APP_NAME: "Aonalyzer"
+      APP_TECHNICAL_NAME: "aonalyzer"
       APP_ENV: "docker"
       APP_DEBUG: "true"
       DASHBOARD_HOST: "0.0.0.0"
       DASHBOARD_PORT: "8501"
-      API_BASE_URL: "http://aoaoanalyzer-api:8000"
+      API_BASE_URL: "http://aonalyzer-api:8000"
       DEFAULT_STRATEGY_PROFILE: "Balanced Research Default"
     ports:
       - "8501:8501"
     volumes:
       - .:/app
-      - aoaoanalyzer_exports:/app/exports
-      - aoaoanalyzer_models:/app/models
-      - aoaoanalyzer_reports:/app/reports
+      - aonalyzer_exports:/app/exports
+      - aonalyzer_models:/app/models
+      - aonalyzer_reports:/app/reports
     depends_on:
-      - aoaoanalyzer-api
+      - aonalyzer-api
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
 
-  aoaoanalyzer-ollama:
+  aonalyzer-ollama:
     image: ollama/ollama:latest
-    container_name: aoaoanalyzer-ollama
+    container_name: aonalyzer-ollama
     profiles:
       - llm
     ports:
       - "11434:11434"
     volumes:
-      - aoaoanalyzer_ollama_data:/root/.ollama
+      - aonalyzer_ollama_data:/root/.ollama
     networks:
-      - aoaoanalyzer-network
+      - aonalyzer-network
 
 networks:
-  aoaoanalyzer-network:
-    name: aoaoanalyzer-network
+  aonalyzer-network:
+    name: aonalyzer-network
     driver: bridge
 
 volumes:
-  aoaoanalyzer_postgres_data:
-  aoaoanalyzer_redis_data:
-  aoaoanalyzer_ollama_data:
-  aoaoanalyzer_exports:
-  aoaoanalyzer_models:
-  aoaoanalyzer_reports:
+  aonalyzer_postgres_data:
+  aonalyzer_redis_data:
+  aonalyzer_ollama_data:
+  aonalyzer_exports:
+  aonalyzer_models:
+  aonalyzer_reports:

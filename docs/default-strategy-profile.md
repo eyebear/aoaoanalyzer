@@ -6,7 +6,7 @@ Balanced Research Default
 
 ## Purpose
 
-Balanced Research Default is the first-use strategy profile for Ao Ao Analyzer.
+Balanced Research Default is the first-use strategy profile for Aonalyzer.
 
 It prevents the system from overwhelming the user with too many settings at the start.
 
@@ -14,7 +14,7 @@ It provides practical default values for stock thesis, option expression, risk f
 
 ## Profile Types
 
-Ao Ao Analyzer supports these profile types:
+Aonalyzer supports these profile types:
 
 - Balanced Research Default
 - Conservative Research

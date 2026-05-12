@@ -2,7 +2,7 @@
 
 ## Product Boundary
 
-Ao Ao Analyzer is a local, Dockerized, AI-assisted equity and options research operating system.
+Aonalyzer is a local, Dockerized, AI-assisted equity and options research operating system.
 
 The platform helps the user collect market data, option chains, news, filings, earnings data, IV data, technical indicators, option suitability data, memory cases, and learning reports.
 
@@ -12,7 +12,7 @@ The user always makes the final decision manually.
 
 ## What the Platform Can Do
 
-Ao Ao Analyzer can:
+Aonalyzer can:
 
 - collect market data
 - collect option chain data
@@ -41,7 +41,7 @@ Ao Ao Analyzer can:
 
 ## What the Platform Must Not Do
 
-Ao Ao Analyzer must not:
+Aonalyzer must not:
 
 - connect to a broker account
 - place trades
@@ -83,9 +83,9 @@ Avoid these terms:
 
 ## Decision Responsibility
 
-Ao Ao Analyzer can explain, rank, filter, warn, and suggest research actions.
+Aonalyzer can explain, rank, filter, warn, and suggest research actions.
 
-Ao Ao Analyzer does not make the final trading decision.
+Aonalyzer does not make the final trading decision.
 
 The user makes the final decision manually outside the platform.
 
@@ -105,7 +105,7 @@ AI providers cannot replace the user’s final manual decision.
 
 ## Data Boundary
 
-Ao Ao Analyzer should assume external data may be incomplete, stale, delayed, or wrong.
+Aonalyzer should assume external data may be incomplete, stale, delayed, or wrong.
 
 If required data is missing or low quality, the system must output an insufficient-data state instead of forcing a normal action suggestion.
 

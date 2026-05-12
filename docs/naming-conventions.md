@@ -4,11 +4,11 @@
 
 Display name:
 
-Ao Ao Analyzer
+Aonalyzer
 
 Technical repository name:
 
-aoaoanalyzer
+aonalyzer
 
 Python package root:
 

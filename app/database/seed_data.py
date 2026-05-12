@@ -151,7 +151,7 @@ INITIAL_VERSION_REGISTRY = [
         "version_key": "rule_version",
         "version_value": "ruleset_2026_05_v1",
         "version_type": "RULE",
-        "description": "Initial rule version for Ao Ao Analyzer.",
+        "description": "Initial rule version for Aonalyzer.",
         "is_active": True,
     },
     {

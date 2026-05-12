@@ -4,8 +4,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class AppSettings(BaseSettings):
-    app_name: str = "Ao Ao Analyzer"
-    app_technical_name: str = "aoaoanalyzer"
+    app_name: str = "Aonalyzer"
+    app_technical_name: str = "aonalyzer"
     app_env: str = "local"
     app_debug: bool = True
 
@@ -18,12 +18,12 @@ class AppSettings(BaseSettings):
 
     postgres_host: str = "localhost"
     postgres_port: int = 5434
-    postgres_db: str = "aoaoanalyzer"
-    postgres_user: str = "aoaoanalyzer"
-    postgres_password: str = "aoaoanalyzer_password"
+    postgres_db: str = "aonalyzer"
+    postgres_user: str = "aonalyzer"
+    postgres_password: str = "aonalyzer_password"
     database_url: str = (
-        "postgresql+psycopg://aoaoanalyzer:aoaoanalyzer_password"
-        "@localhost:5434/aoaoanalyzer"
+        "postgresql+psycopg://aonalyzer:aonalyzer_password"
+        "@localhost:5434/aonalyzer"
     )
 
     redis_host: str = "localhost"

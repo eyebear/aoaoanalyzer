@@ -1,16 +1,16 @@
-# Ao Ao Analyzer
+# Aonalyzer
 
-Ao Ao Analyzer is a local equity and options research platform for structured market review, option suitability analysis, decision traceability, memory, and learning.
+Aonalyzer is a local equity and options research platform for structured market review, option suitability analysis, decision traceability, memory, and learning.
 
 ## Project Identity
 
 Display name:
 
-Ao Ao Analyzer
+Aonalyzer
 
 Repository name:
 
-aoaoanalyzer
+aonalyzer
 
 ## Main Features
 
@@ -64,7 +64,7 @@ aoaoanalyzer
 
 ## Project Structure
 
-    aoaoanalyzer
+    aonalyzer
     ├── app
     │   ├── api
     │   ├── agent

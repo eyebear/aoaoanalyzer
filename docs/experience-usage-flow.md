@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Ao Ao Analyzer must not only record historical experience.
+Aonalyzer must not only record historical experience.
 
 It must use recorded experience in future decisions.
 
@@ -16,7 +16,7 @@ Experience must feed future decisions through the Memory Layer, Learning Layer, 
 
 ## Experience Sources
 
-Ao Ao Analyzer records experience from:
+Aonalyzer records experience from:
 
 - action suggestions
 - decision snapshots

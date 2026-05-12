@@ -113,8 +113,8 @@ def test_health_endpoint_works() -> None:
     body = response.json()
 
     assert body["status"] == "ok"
-    assert body["app_name"] == "Ao Ao Analyzer"
-    assert body["technical_name"] == "aoaoanalyzer"
+    assert body["app_name"] == "Aonalyzer"
+    assert body["technical_name"] == "aonalyzer"
 
 
 def test_system_status_endpoint_works() -> None:
@@ -125,8 +125,8 @@ def test_system_status_endpoint_works() -> None:
     body = response.json()
 
     assert body["status"] == "running"
-    assert body["app_name"] == "Ao Ao Analyzer"
-    assert body["technical_name"] == "aoaoanalyzer"
+    assert body["app_name"] == "Aonalyzer"
+    assert body["technical_name"] == "aonalyzer"
     assert body["default_strategy_profile"] == "Balanced Research Default"
 
 

@@ -9,7 +9,7 @@ def main() -> None:
 
     print(
         {
-            "service": "aoaoanalyzer-agent",
+            "service": "aonalyzer-agent",
             "status": "started",
             "app_name": settings.app_name,
             "environment": settings.app_env,
@@ -23,7 +23,7 @@ def main() -> None:
     while True:
         print(
             {
-                "service": "aoaoanalyzer-agent",
+                "service": "aonalyzer-agent",
                 "status": "running",
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             },
